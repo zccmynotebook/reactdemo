@@ -1,12 +1,14 @@
 
 import React,{Component} from 'react'
+import { nanoid } from 'nanoid'
 import './index.css'
 export default class Input extends Component{
     addOne=(e)=>{
-        console.log(111,e)
         let {keyCode,target}=e
+        let v=target.value.trim()
+        if(v==='') return
         if(keyCode===13){
-           this.props.addOne({id:4,name:target.value}) 
+           this.props.addOne({id:nanoid(),name:v,done:false}) 
            target.value=''
         }
     }

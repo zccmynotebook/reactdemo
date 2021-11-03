@@ -1,11 +1,10 @@
 
 import React,{Component} from 'react'
+import StateList from '../StateList'
 export default class News extends Component{
     render(){
         return (
-            <header>
-                News
-            </header>
+            <div><StateList></StateList></div>
         )
     }
 }

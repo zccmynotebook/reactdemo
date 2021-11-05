@@ -1,18 +1,22 @@
 
 import React,{Component} from 'react'
-import {connect} from 'react-redux'
-import {checkOne,deleteOne} from '../../redux/action.js'
+import store from '../../redux/store'
+
 import './index.css'
-class Item extends Component{
+export default class Item extends Component{
     deleteOne=(id)=>{
-        console.log(1,this.props)
-        this.props.deleteOne(id)
+        store.dispatch( {
+            type: 'DEL_TODO',
+            id  
+        })
     }
     handleCheck=(id,done)=>{
-        this.props.checkOne(id,done)
+        store.dispatch( {
+            type: 'CHECK_STATUS',
+            id,done
+        })
     }
     render(){
-        console.log('render item',this.props)
         let {name,done,id}=this.props
         return (
             <li>  
@@ -23,7 +27,3 @@ class Item extends Component{
         )
     }
 }
-
-export default connect(state=>({list:state}),()=>({
-    checkOne,deleteOne
-}))(Item)

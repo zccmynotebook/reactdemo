@@ -1,0 +1,5 @@
+export const  addOne=(value)=>({type: 'ADD_TODO',value})
+export const  deleteOne=(id)=>({type: 'DEL_TODO',id})
+export const  deleteDone=()=>({type: 'DEL_DONE'})
+export const  checkOne=(id)=>({type: 'CHECK_STATUS',id})
+export const  checkAll=(status)=>({type: 'CHECKALL',status})

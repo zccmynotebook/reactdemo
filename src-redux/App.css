@@ -1,0 +1,17 @@
+.pull-right{
+  float: right;
+}
+.wrap{
+  width: 600px;
+  margin: 10px auto;
+}
+.btn{
+  background: yellowgreen;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+
+

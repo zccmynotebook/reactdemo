@@ -1,19 +1,22 @@
 
 import React,{Component} from 'react'
 import './index.css'
- 
-import {connect} from 'react-redux'
-import {checkAll,deleteDone} from '../../redux/action.js'
+import store from '../../redux/store'
 
-class Footer extends Component{
-      handleCheckAll=(done)=>{
-        this.props.checkAll(done)
+export default class Footer extends Component{
+    handleCheckAll=(done)=>{
+        store.dispatch( {
+            type: 'CHECKALL',
+            done  
+        })
       }
       deleteDone=()=>{
-        this.props.deleteDone()
+        store.dispatch( {
+            type: 'DEL_DONE'
+        })
       }
     render(){
-        let {list} = this.props
+        let list = store.getState()
         let done=list.filter(v=>v.done).length
         return (
             <footer>
@@ -24,6 +27,3 @@ class Footer extends Component{
         )
     }
 }
-export default connect(state=>({list:state}),()=>({
-    checkAll,deleteDone
-}))(Footer)

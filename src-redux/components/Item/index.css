@@ -1,0 +1,18 @@
+li{
+    padding: 10px;
+    overflow: auto;
+    border-bottom: 1px solid #ccc;
+    vertical-align: middle;
+  }
+  li .txt{
+    line-height: 40px;
+  }
+  li:hover{
+      background: lightblue;
+  }
+  li span.btn{
+      display: none;
+  }
+ li:hover span.btn{
+     display: inline-block;
+ }

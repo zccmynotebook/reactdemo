@@ -2,17 +2,16 @@
 //一个reducer最好处理一个数据
 
 export default function getList(state=[],action){
-    console.log(122,state,action)
     let {type,id,done}=action
     switch(type){
         case 'ADD_TODO':
             let {value} = action
+            //state.unshift(value)
             state=[value,...state]
         break
         case 'DEL_TODO': 
-            state=state.filter(v=>{
-                return v.id!==id
-            })
+            let i= state.findIndex(v=>v.id===id)
+            state.splice(i,1)
         break
         case 'DEL_DONE': 
             state=state.filter(v=>!v.done)

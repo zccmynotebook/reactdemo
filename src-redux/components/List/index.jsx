@@ -2,11 +2,11 @@
 import React,{Component} from 'react'
 import Item from '../Item'
 import './index.css'
-import {connect} from 'react-redux'
+import store from '../../redux/store'
 
-class List extends Component{
+export default class List extends Component{
     render(){
-        let {list} = this.props
+        let list = store.getState()
         return (
             <ul>
                {
@@ -20,5 +20,3 @@ class List extends Component{
         )
     }
 }
-
-export default connect(state=>({list:state}),null)(List)

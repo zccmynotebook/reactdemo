@@ -5,14 +5,14 @@ import {checkOne,deleteOne} from '../../redux/action.js'
 import './index.css'
 class Item extends Component{
     deleteOne=(id)=>{
-        console.log(1,this.props)
+        console.log(1,this.props.deleteOne)
         this.props.deleteOne(id)
     }
     handleCheck=(id,done)=>{
         this.props.checkOne(id,done)
     }
     render(){
-        console.log('render item',this.props)
+        console.log('render item',this.props,checkOne)
         let {name,done,id}=this.props
         return (
             <li>  

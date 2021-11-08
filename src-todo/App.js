@@ -1,9 +1,9 @@
-import {Component} from 'react'
+import {Component,Context} from 'react'
 import Input from './components/Input'
 import List from './components/List'
 import Footer from './components/Footer'
 import './App.css';
- 
+import CusContext from './context'
 export default class App extends Component{
     state={
       todos:[]
@@ -52,9 +52,11 @@ export default class App extends Component{
       }
       return (
         <div className="wrap">
+        <CusContext.Provider value={{top:'value from app'}}>
           <Input addOne={addOne}/>
           <List {...lobj}/>
           <Footer {...fobj}/>
+        </CusContext.Provider>
         </div>
       );
     }

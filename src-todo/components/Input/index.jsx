@@ -1,5 +1,5 @@
 
-import React,{Component} from 'react'
+import React,{Component,Fragment} from 'react'
 import { nanoid } from 'nanoid'
 import './index.css'
 export default class Input extends Component{
@@ -14,9 +14,9 @@ export default class Input extends Component{
     }
     render(){
         return (
-            <header>
+            <Fragment>
                 <input type="text" onKeyUp={this.addOne}/>
-            </header>
+            </Fragment>
         )
     }
 }

@@ -15,7 +15,7 @@ class Input extends Component{
         }
     }
     render(){
-        console.log('render input',this.props)
+        console.log('render input',this.props,addOne)
 
         return (
             <header>
